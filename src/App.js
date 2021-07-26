@@ -10,6 +10,7 @@ import { Route } from 'react-router-dom'
 import {BrowserRouter as Router} from 'react-router-dom';
 import Signup from './components/signup/Signup';
 import SlidHomes from './components/slidinghomes/SlidHomes';
+import Location from './components/location/Location';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/slidehome" component={SlidHomes} />
+        <Route exact path="/map" component={Location} />
         {/* <Login /> */}
         <Footer />
       </div>

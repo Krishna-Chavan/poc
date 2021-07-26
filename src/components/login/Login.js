@@ -29,22 +29,22 @@ export default function Login() {
     }
 
     return (
-        <div className="div1">
+        <div>
 
             <div className="containers">
                 <div className="sign-in-card">
                     
                         <h2 className="signin-heading">Login</h2>
                         <div className="mb-2">
-                            <input type="text" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Username" />
+                            <input data-testid="input" type="text" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Username" />
                         </div>
                         <p style={{ color: 'red', fontSize: '10pt' }}>{emailError}</p>
                         <div className="mb-2">
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="Password" />
+                            <input type="password" data-testid="input" onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="Password" />
                         </div>
                         <p style={{ color: 'red', fontSize: '10pt' }}>{passwordError}</p>
                         <div className="mb-2">
-                            <button className="btn btn-success" type="button" onClick={Login}>Login</button>
+                            <button data-testid="loginbtn" className="btn btn-success" type="button" onClick={Login}>Login</button>
                         </div>
                         <label>
                             <input type="checkbox" checked="checked" name="remember" />
@@ -52,10 +52,10 @@ export default function Login() {
                         </label>
                         <div className="separtor">or</div>
                         <div className="social-media-icons">
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-google"></i></a>
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i className="fab fa-facebook-f"></i></a>
+                            <a href=""><i className="fab fa-google"></i></a>
+                            <a href=""><i className="fab fa-twitter"></i></a>
+                            <a href=""><i className="fab fa-linkedin-in"></i></a>
                         </div>
                         <div className="signup-text">
                             <p>Not a member? <a href="#">Sign up now</a></p>

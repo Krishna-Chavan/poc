@@ -41,7 +41,7 @@ export default function Signup() {
     }
 
     return (
-        <div className="div1">
+        <div>
             <div className="containers">
                 <div className="sign-in-card">
                    

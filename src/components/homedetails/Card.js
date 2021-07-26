@@ -16,9 +16,9 @@ export default function Card(props) {
         <div className="col-md-4 mt-3">
             <div className="div-1">
                 <div className="card">
-                    <img src={props.Image} onClick={slideImages} classNameName="card-img-top" alt="my home"  />
+                    <img src={props.Image} onClick={slideImages} className="card-img-top" alt="my-home"  />
                     <span className="span"><i class="far fa-lg fa-heart" onClick={favorite}></i></span>
-                    <div classNameName="card-body">
+                    <div className="card-body">
                         <p className="card-text"><input type="checkbox" checked />House For Sale</p>
                         <h5 className="card-title">{props.HouseNo}</h5>
                         <p className="card-text">{props.Amount}</p>
