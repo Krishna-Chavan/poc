@@ -1,25 +1,25 @@
-name: Run Tests
+name: Trigger Lambda Function
 
 on:
   push:
     branches:
-      - master  # Replace with your branch name
+      - master
 
 jobs:
-  test:
+  trigger_lambda:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          python-version: 3.9  # Replace with your desired Python version
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt  # Replace with your dependencies file
-
-      - name: Run Python script
-        run: python automation.py  # Replace with the path to your Python script
+      - name: Invoke Lambda function
+        run: |
+          aws lambda invoke \
+            --function-name automatetesting \
+            --payload '{ "message": "Hello, Lambda!" }' \
+            response.json
