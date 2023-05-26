@@ -23,6 +23,6 @@ jobs:
           ENCODED_PAYLOAD=$(echo -n $PAYLOAD | base64)
 
           aws lambda invoke \
-            --function-name MyLambdaFunction \
+            --function-name automatetesting \
             --payload "$ENCODED_PAYLOAD" \
             response.json
