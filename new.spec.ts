@@ -4,7 +4,7 @@
           (click)="openNav()"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-          style= " margin-top: 10px;"
+          style= " margin-top: 20px;"
           >
             <i style="font-size: 19px;color: #131d57;" class="fa fa-user-circle-o user-circle-icon" aria-hidden="true"></i>
           </button>
