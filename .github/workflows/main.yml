@@ -19,7 +19,10 @@ jobs:
 
       - name: Invoke Lambda function
         run: |
+          PAYLOAD='{"message": "Hello, Lambda!"}'
+          ENCODED_PAYLOAD=$(echo -n $PAYLOAD | base64)
+
           aws lambda invoke \
-            --function-name automatetesting \
-            --payload '{ "message": "Hello, Lambda!" }' \
+            --function-name MyLambdaFunction \
+            --payload "$ENCODED_PAYLOAD" \
             response.json
