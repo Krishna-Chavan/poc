@@ -1,0 +1,34 @@
+name: Create Jira Issue
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Jira Issue
+        env:
+          JIRA_USERNAME: krishnashankarchavan1999@gmail.com
+          JIRA_PASSWORD: ATATT3xFfGF0WfaxcurqAYAzqnaqnfbwFlizXckZ26xUDz2DSx4co9BYiy530KINDPsTdHCpQwuatlcCHPXvKli528x3rHS5n7gIJphUuLr-AHb-HyUgfZbQFYyUf4-CdXDFInuEBXdQ4eZj28A1nDXRS_pFZbSdsWLpmkeJvb2Hpw2VDzN9vkA=4F81B687
+          JIRA_BASE_URL: https://krishnademo123.atlassian.net
+        run: |
+          curl -D- -u $JIRA_USERNAME:$JIRA_PASSWORD -X POST \
+          --data '{
+            "fields": {
+              "project": {
+                "key": "DEMO"
+              },
+              "summary": "REST ye merry gentlemen.",
+              "description": "Creating of an issue using project keys and issue type names using the REST API",
+              "issuetype": {
+                "name": "Bug"
+              }
+            }
+          }' \
+          -H "Content-Type: application/json" \
+          $JIRA_BASE_URL/rest/api/2/issue/
